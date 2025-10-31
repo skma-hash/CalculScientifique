@@ -38,8 +38,8 @@ def main():
         print(f"\nRésultat (Lagrange) : ", racine)
 
     elif "4" in choix or "newton" in choix:
-        E  = float(input("Entrez le seuil : "))
-        racine = newton(F, u, E)
+        e = float(input("Entrez le seuil : "))
+        racine = newton(f, u, e)
         print(f"\nRésultat (Newton) : ", racine)
 
     else:
