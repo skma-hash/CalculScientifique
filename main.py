@@ -1,15 +1,49 @@
-import dichotomie as dichotomie 
-import balayage as balayage 
+from math import *
+from dichotomie import dichotomie
+from balayage import balayage
+from lagrange import lagrange
+from Newton import Newton
 
-def f(x) :
-    return x**2 - 2 # On cherche la valeur approchee d'une racine de cette fonction 
+def fct():
+    f = input("Veuillez entrer votre fonction, en fonction de x ")
+    return lambda x: eval(f)
+
+f = fct()
 
 def main():
-    print("Recherche d'une valeur approchee de la racine")
-    a = float(input("Entrez une valeur pour la premiere borne de l'intervalle  a :"))
-    b = float(input("Entrez une valeur pour la deuxieme borne de l'intervalle b :"))
-    e = float(input("Entrez le seuil :"))
+    print("Calcul des valeurs qpprochées ")
+    print("Méthode 1 : Dichotomie")
+    print("Méthode 2 : Balayage")
+    print("Méthode 3 : Lagrange")
+    print("Méthode 4 : Newton")
 
-    print(f"Soit une fonction f definie sur un intervalle [{a}, {b} ")
+    choix = input("Entrez le nom ou le numéro de la méthode : ").lower().strip()
 
-    print("Choix invalide.")
+    a = float(input("Entrez la valeur de la borne a : "))
+    b = float(input("Entrez la valeur de la borne b : "))
+
+    if "1" in choix or "dichotomie" in choix:
+        e = float(input("Entrez le seuil epsilon : "))
+        racine = dichotomie(f, a, b, e)
+        print(f"\nRésultat (dichotomie) : ", racine)
+
+    elif "2" in choix or "balayage" in choix:
+        e  = float(input("Entrez le seuil : "))
+        racine = balayage(f, a, b, e)
+        print(f"\nRésultat (balayage) :" , racine)
+
+    elif "3" in choix or "lagrange" in choix:
+        e  = float(input("Entrez le seuil : "))
+        racine = lagrange(f, a, b, e)
+        print(f"\nRésultat (Lagrange) : ", racine)
+
+    elif "4" in choix or "newton" in choix:
+        E  = float(input("Entrez le seuil : "))
+        racine = newton(F, u, E)
+        print(f"\nRésultat (Newton) : ", racine)
+
+    else:
+        print("❌ Méthode inconnue. Veuillez entrer 1, 2, 3 ou 4.")
+
+if __name__ == "__main__":
+    main()

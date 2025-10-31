@@ -1,11 +1,9 @@
 
 
 #On défini notre fonction principale 'Newton'
-def Newton():
+def Newton(F, u, E):
 
 #Partie pour demander à l'utilisateur d'entrer les valeurs nécessaires     
-    u = float(input("Entrez la valeur initiale de u  :  "))
-    E = float(input("Entrez la valeur du seuil de précision :  "))
     S = u;
     print("\nInitialement on a :  u = ",u," et S = ", S)
 #On écris maintenant des fonctions pour demander à l'utilisateur d'entrer l'expression de sa fonction
@@ -41,4 +39,4 @@ def Newton():
     
     return print( " \n\n\n                La valeur approchée de votre fonction à ",E," près est : S = ", S); # Retour du résultat final 
 
-print(Newton())# Affichage final
+# Affichage final

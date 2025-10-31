@@ -2,7 +2,7 @@
 
 
 #Définition de notre fonction principale
-def Balayage():
+def balayage(f, a, b, e):
 
     
     #Partie où l'utilisateur devra entrer les diverses valeurs qu'utilisera notre fonction principale  
@@ -54,9 +54,9 @@ def Balayage():
     print("f(",x,") *  f(",y,") = ", f(x)*f(y)," et  |y-x| = ",abs(y-x) )
     print(" x = ", x,"\n y = ", y, "\n S = ", S)
         
-    return print("\n OUFF!! Terminé... \nLa valeur approchée d'une racine de votre fonction à", e ,"près est :", S); # On retourne la valeur de S
+    return print("\n Calcul Terminé... \nLa valeur approchée d'une racine de votre fonction à", e ,"près est :", S); # On retourne la valeur de S
 
-print(Balayage()) # Affichage du resultat final retouné par la fonction principale
+# Affichage du resultat final retouné par la fonction principale
 
 
 
