@@ -1,6 +1,6 @@
 
 #Définition de notre fonction principale
-def dichotomie():
+def lagrange():
 
     
     #Partie où l'utilisateur devra entrer les diverses valeurs qu'utilisera notre fonction principale  
@@ -10,9 +10,9 @@ def dichotomie():
     e = float(input("Entrez la valeur seuil e : "))
     
     
-    x = a ;
-    y = b ;
-    i = 0 ;
+    u = a ;
+    t = b ;
+    s = u ;
 
     
     #Définition de la fonction qui demandera à l'utilisateur d'entrer l'expression de sa fonction
@@ -22,21 +22,27 @@ def dichotomie():
 
     f = fct() #Stackage de la fonction entrée par l'ulisateur dans la variable f 
 
-    print(" \nx = ", x,"\n y = ", y, "\n i = ", i)
-    while(f(x)*f(x+e) > 0) :
-        x = x+e
-        s= x+ e/2
-        i = i + 1 
-    print("x = ", x+e)
-    print("\n et  s = ", x + e/2)
-    print("\n i = " , i+1)
-    print(" \nx = ", x,"\n y = ", y, "\n i = ", i)
+    print(" \nu = ", u,"\n t = ", t, "\n s = ", s)
+    if (f(t)== 0) :
+        s = t
+        print(" \nu = ", u,"\n t = ", t, "\n s = ", s)
+    while((f(u)*f(t) < 0) and((abs(u-t) >= e))) :
+        s= (u*f(t) - tf(u)) / (f(t)-f(u))
     
+    print("\n et  s = ", (u*f(t) - tf(u)) / (f(t)-f(u)))
+    print(" \nu = ", u,"\n t = ", t, "\n s = ", s)
+    if ((f(s)*f(t)) < 0) :
+        u = s
+            
+    else:
+        t = s
+        
+    print(" \nu = ", u,"\n t = ", t, "\n s = ", s)
     print("\n \n  On obtient :")
-    print("x = ", x+e)
-    print("\n et  s = ", x + e/2)
-    print(" \nx = ", x,"\n y = ", y, "\n i = ", i)
+    print("s = ",  (u*f(t) - tf(u)) / (f(t)-f(u)))
+    
+    print(" \nu = ", u,"\n t = ", t, "\n s = ", s)
     
     return print("\n Calcul Termine !!!... \nUne valeur approchée de la racine  de  notre fonction à", e ,"près est :", s); # On retourne la valeur de S
 
-print(dichotomie()) # Affichage du resultat final retouné par la fonction principale
+print(lagrange()) # Affichage du resultat final retouné par la fonction principal

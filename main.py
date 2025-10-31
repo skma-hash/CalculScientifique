@@ -12,21 +12,4 @@ def main():
 
     print(f"Soit une fonction f definie sur un intervalle [{a}, {b} ")
 
-# Choisir la méthode de calcul
-    
-    print("\nChoisissez la méthode :")
-    print("1. Dichotomie")
-    print("2. Balayage")
-    
-    choix = input("Votre choix : ")
-
-if  choix == "1":
-    racine = dichotomie(f, a, b, e)
-    print(f"\nMéthode de dichotomie → racine ≈ {racine}")
-
-elif choix == "2":
-    racine = balayage(f, a, b, e)
-    print(f"\nMéthode du balayage → racine ≈ {racine}")
-
-else:
     print("Choix invalide.")
